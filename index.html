@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Little Time for You</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+</head><body>
+<div id="intro" class="overlay" hidden><div class="card mid"><div class="sparkle" aria-hidden="true">✦ ♡ ✧</div><h1>I made this little space just for you.</h1><p>Somewhere you can focus, rest, and remember that someone is always proud of you.</p><button class="btn" id="enter">Enter Your Little Space ♡</button></div></div>
+<div id="modal" class="overlay" hidden role="dialog" aria-modal="true"><div class="card mid" id="mbody"></div></div>
+<div id="brk" class="overlay" hidden role="dialog" aria-modal="true"><div class="card mid"><h2>Break time corner ☕</h2><div class="breath" id="breath" aria-hidden="true"></div><p id="bword" aria-live="polite">Breathe in…</p><div id="bt" class="big"></div><div class="tips" id="tips"></div><div class="row"><button class="btn s" id="b5">Start 5 min break</button><button class="btn" id="bx">Back to my space</button></div></div></div>
+<div id="toast" role="status" aria-live="polite"></div>
+<aside><h1 id="logo" class="logo">♡ A Little Time<br>for You</h1><nav id="nav" aria-label="Main"></nav></aside>
+<main>
+<section id="v-home" class="view"><h2 id="hi"></h2><p id="date"></p><p>Ready to make a little progress today? I'll be cheering for you.</p>
+<div class="grid"><div class="card"><h3>Today's love note 💌</h3><p id="daily" class="hand"></p></div>
+<div class="card"><h3>Quick start ⏳</h3><div class="row" id="quick"></div><div class="pal" id="bun"></div></div>
+<div class="card"><h3>Today's goals 🌷</h3><ul id="htasks" class="list"></ul></div>
+<div class="card"><h3>Your garden 🌱</h3><div id="hgarden" class="gar"></div></div></div></section>
+<section id="v-focus" class="view" hidden><h2>Focus ⏳</h2>
+<div class="card mid"><input id="subj" placeholder="What are you studying?" aria-label="Study subject" maxlength="60">
+<div class="ring"><svg viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="90" class="rb"/><circle id="arc" cx="100" cy="100" r="90" class="rf"/></svg><div><div id="time" class="big" role="timer">25:00</div><small id="phase">Study</small></div></div>
+<p id="eta"></p><div class="row"><button class="btn" id="go">Start</button><button class="btn s" id="rst">Reset</button><button class="btn s" id="skip">Skip</button></div>
+<div class="row" id="presets"></div>
+<div class="row"><label>h <input id="th" type="number" min="0" max="99" value="0"></label><label>m <input id="tm" type="number" min="0" max="59" value="25"></label><label>s <input id="ts" type="number" min="0" max="59" value="0"></label><button class="btn s" id="setc">Set time</button></div>
+<div class="row"><label><input type="checkbox" id="pomo"> Pomodoro</label><label>study <input id="ps" type="number" min="1" max="180"></label><label>break <input id="pb" type="number" min="1" max="60"></label><label><input type="checkbox" id="tick"> Ticking</label></div></div>
+<div class="card mid"><h3>Cozy sounds 🎧</h3><p class="mut">Mix as many as you like. They're made right in your browser, so no audio files are needed.</p><div class="row" id="snds"></div><label>Volume <input type="range" id="vol" min="0" max="1" step=".05"></label></div></section>
+<section id="v-notes" class="view" hidden><h2>My little notes 📓</h2>
+<div class="row"><button class="btn" id="nnew">+ New note</button><input id="nq" type="search" placeholder="Search notes…" aria-label="Search notes"><button class="btn s" id="nexp">Export .txt</button></div><datalist id="cats"></datalist><div id="notes" class="grid"></div></section>
+<section id="v-goals" class="view" hidden><h2>Today's little goals 🌷</h2>
+<form id="tf" class="card row"><input id="tt" placeholder="Add a little goal…" required maxlength="120" aria-label="Task"><input id="tsub" placeholder="Subject" list="cats" aria-label="Subject"><select id="tp" aria-label="Priority"><option value="1">High</option><option value="2" selected>Medium</option><option value="3">Low</option></select><input id="td" type="date" aria-label="Due date"><button class="btn">Add</button></form>
+<div class="card"><div class="bar"><i id="pbar"></i></div><p id="pmsg"></p></div>
+<div class="card"><h3>To do</h3><ul id="open" class="list"></ul></div><div class="card"><h3>Completed ✓</h3><ul id="done" class="list"></ul><button class="btn s" id="clr">Clear completed</button></div></section>
+<section id="v-garden" class="view" hidden><h2>Our little study garden 🌱</h2><p id="gtxt"></p><div class="card"><div id="garden" class="gar big"></div></div></section>
+<section id="v-progress" class="view" hidden><h2>Progress ⭐</h2><div class="grid" id="stats"></div><div class="card"><h3>This week</h3><div class="chart" id="chart"></div></div><div class="card"><h3>Little achievements</h3><div class="grid" id="ach"></div></div><div class="card"><h3>History</h3><ul id="hist" class="list"></ul></div></section>
+<section id="v-letters" class="view" hidden><h2>Little letters 💌</h2><div class="card mid"><button class="env" id="env" aria-label="Need a little love? Open an envelope"><span>💌</span>Need a little love?</button><p id="lnote" class="hand" aria-live="polite"></p></div><div class="card"><h3>All my little notes</h3><ul id="lall" class="list"></ul></div></section>
+<section id="v-settings" class="view" hidden><h2>Settings 🎀</h2><div class="card col">
+<label>Display name <input id="sn" maxlength="30"></label>
+<label>Theme <select id="st"><option value="rose">Rose</option><option value="lavender">Lavender</option><option value="cream">Cream</option></select></label>
+<label><input type="checkbox" id="sd"> Dark mode</label>
+<label>Animations <select id="sm"><option value="normal">Normal</option><option value="calm">Calm</option><option value="off">Off</option></select></label>
+<label>Timer presets (minutes, comma separated) <input id="sp"></label>
+<label><input type="checkbox" id="ss"> Sounds on</label>
+<div><button class="btn s" id="sno">Enable browser notifications</button><p class="mut" id="nst">Notifications only appear while this page is open in your browser (a background tab is fine). They may not work if the browser is fully closed or your device limits background activity.</p></div>
+<div class="row"><button class="btn s" id="sex">Export data (JSON)</button><label class="btn s">Import data<input id="sim" type="file" accept=".json" hidden></label><button class="btn s" id="sin">Replay intro</button><button class="btn danger" id="srs">Reset all data</button></div></div></section>
+<p class="hand foot">Made with love, just for you.</p></main>
+<script src="js/messages.js"></script><script src="js/app.js"></script></body></html>
